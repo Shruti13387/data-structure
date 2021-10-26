@@ -20,6 +20,13 @@ public class Graph {
         }
     }
 
+    public void addUndirectedEdge(int source, int destination){
+        if(source < vertices && destination < vertices){
+            this.adjacencyList[source].addLast(destination);
+            this.adjacencyList[destination].addLast(source);
+        }
+    }
+
     public void printGraph() {
         System.out.println(">>Adjacency List of Directed Graph<<");
         addEdge(0,5);
