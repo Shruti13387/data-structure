@@ -40,7 +40,6 @@ public class CyclicGraph {
     }
 
     public static boolean isCyclicGraph(Graph graph) {
-        boolean isCyclic = false;
         Stack<Integer> stack = new Stack();
         boolean[] visited = new boolean[graph.vertices];
         boolean[] dfsVisited = new boolean[graph.vertices];
@@ -59,7 +58,7 @@ public class CyclicGraph {
                         for (int i = 0; i < adjacent.size(); i++) {
                             int node = adjacent.get(i);
                             if (dfsVisited[node] && visited[node])
-                                isCyclic = true;
+                                return true;
 
                             dfsVisited[node] = true;
                             if (!visited[node]) {
@@ -73,6 +72,6 @@ public class CyclicGraph {
                 }
             }
         }
-        return isCyclic;
+        return false;
     }
 }
