@@ -1,9 +1,9 @@
-public class BSTInsertion {
+public class BinarySearchTree {
 
     private Node root;
 
     public static void main(String[] args) {
-        BSTInsertion bsT = new BSTInsertion();
+        BinarySearchTree bsT = new BinarySearchTree();
 
         bsT.add(6);
         bsT.add(4);
@@ -16,6 +16,15 @@ public class BSTInsertion {
         bsT.add(14);
 
         bsT.printTree(bsT.getRoot());
+
+        Node temp = bsT.search(5);
+        if (temp != null) {
+            System.out.println("\n" + temp.getData() + " found in Tree !");
+        }
+        temp = bsT.search(51);
+        if (temp != null) {
+            System.out.println("\n" + temp.getData() + " found in Tree !");
+        }
     }
 
     private Node getRoot() {
@@ -52,6 +61,28 @@ public class BSTInsertion {
         return false;
     }
 
+    public Node search(int searchData){
+        return search(searchData, root);
+    }
+
+    public Node search(int searchData, Node currentNode){
+
+        if(currentNode==null){
+            return null;
+        }
+
+        if(searchData == currentNode.getData()){
+            return currentNode;
+        }
+
+        if(searchData < currentNode.getData()){
+            return search(searchData, currentNode.getLeftNode());
+        }
+        if(searchData > currentNode.getData()){
+            return search(searchData, currentNode.getRightNode());
+        }
+        return null;
+    }
 
     //Just for Testing purpose
     public void printTree(Node current)
