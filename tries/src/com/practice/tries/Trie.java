@@ -12,6 +12,11 @@ public class Trie {
         return x - 'a';
     }
 
+    //Function to get root
+    public TrieNode getRoot() {
+        return root;
+    }
+
     public void insert(String key){
         if(null==key){
             System.out.println("Null key cannot be inserted");

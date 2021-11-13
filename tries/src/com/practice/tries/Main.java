@@ -20,6 +20,8 @@ public class Main {
             System.out.println("\""+ keys[i]+ "\" " + "Inserted.");
         }
 
+        System.out.println("Total Words Before Deleting: "+TotalWords.countTotalWords(t.getRoot()));
+
         // Search for different keys
         if(t.search("the") == true)
             System.out.println("the --- " + output[1]);
@@ -63,5 +65,6 @@ public class Main {
             System.out.println("abc --- " + output[1]);
         else System.out.println("abc --- " + output[0]);
 
+        System.out.println("Total Words After Deleting: "+TotalWords.countTotalWords(t.getRoot()));
     }
 }
