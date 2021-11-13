@@ -1,6 +1,6 @@
 package com.practice.tries;
 
-public class TotalWords {
+public class CountTotalWords {
 
     public static int countTotalWords(TrieNode tries){
         int result = 0;
@@ -15,6 +15,7 @@ public class TotalWords {
         }
         return result;
     }
+
 
 }
 

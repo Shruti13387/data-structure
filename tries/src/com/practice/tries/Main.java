@@ -1,5 +1,6 @@
 package com.practice.tries;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -13,14 +14,14 @@ public class Main {
         System.out.println("Keys to insert: "+ Arrays.toString(keys) + "\n");
 
         // Construct trie
-        int i;
-        for (i = 0; i < keys.length ; i++)
+        for (int i = 0; i < keys.length ; i++)
         {
             t.insert(keys[i]);
             System.out.println("\""+ keys[i]+ "\" " + "Inserted.");
         }
 
-        System.out.println("Total Words Before Deleting: "+TotalWords.countTotalWords(t.getRoot()));
+/*
+        System.out.println("Total Words Before Deleting: "+ CountTotalWords.countTotalWords(t.getRoot()));
 
         // Search for different keys
         if(t.search("the") == true)
@@ -65,6 +66,12 @@ public class Main {
             System.out.println("abc --- " + output[1]);
         else System.out.println("abc --- " + output[0]);
 
-        System.out.println("Total Words After Deleting: "+TotalWords.countTotalWords(t.getRoot()));
+        System.out.println("Total Words After Deleting: "+ CountTotalWords.countTotalWords(t.getRoot()));
+*/
+
+        ArrayList< String > list = FindAllWords.findWords(t.getRoot());
+        for(int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
     }
 }
